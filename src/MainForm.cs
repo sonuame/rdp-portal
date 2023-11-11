@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -116,11 +117,12 @@ namespace RDP_Portal {
 
             // Avoid click empty area reset value
             if (profile == selectedProfile && !force) {
+                btnDuplicate.Enabled = false;
                 return;
             }
 
             selectedProfile = profile;
-
+            btnDuplicate.Enabled = true;
             EditMode = profile.JustAdded;
 
             textBoxName.Text = profile.Name ;
@@ -181,6 +183,7 @@ namespace RDP_Portal {
             profile.Username = textBoxUsername.Text;
             profile.Password = textBoxPassword.Text;
             profile.Domain = textBoxDomain.Text;
+            profile.Filename = Path.Combine(Config.rdpDir, profile.Name + ".rdp");
 
             profile.PrepareRdpFile();
 
@@ -239,5 +242,18 @@ namespace RDP_Portal {
             e.DrawFocusRectangle();
         }
 
+        private void btnDuplicate_Click(object sender, EventArgs e)
+        {
+            var selectedItems = (Profile)listBox.SelectedItem;
+            if(selectedItems != null)
+            {
+                AddNewProfile();
+                textBoxName.Text = selectedItems.Name + "_copy";
+                textBoxComputer.Text = selectedItems.Computer;
+                textBoxDomain.Text = selectedItems.Domain;
+                textBoxUsername.Text = selectedItems.Username;
+                textBoxPassword.Text = selectedItems.Password;
+            }
+        }
     }
 }

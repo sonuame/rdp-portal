@@ -147,7 +147,7 @@ namespace RDP_Portal {
             if (justCreated) {
                 result.Add("desktopwidth:i:1280");
                 result.Add("desktopheight:i:720");
-                result.Add("use multimon:i:0");
+                result.Add("use multimon:i:1");
                 result.Add("screen mode id:i:1");
                 result.Add("authentication level:i:0");
                 result.Add("prompt for credentials:i:0");
