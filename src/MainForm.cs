@@ -30,6 +30,14 @@ namespace RDP_Portal {
             }
 
             checkBoxKeepOpening.Checked = _config.KeepOpening;
+            cbResolutions.Items.AddRange(new[]
+            {
+                "Full Screen",
+                "1600 x 900",
+                "1280 x 720"
+            });
+
+            cbResolutions.SelectedIndex = 0;
         }
 
         public bool EditMode {
@@ -53,6 +61,7 @@ namespace RDP_Portal {
         private void AddNewProfile() {
             var profile = new Profile();
             profile.JustAdded = true;
+            profile.WindowSize = cbResolutions.Items[0].ToString();
             _config.Profiles.Add(profile);
             listBox.SelectedIndex = _config.Profiles.Count - 1;
         }
@@ -76,6 +85,7 @@ namespace RDP_Portal {
 
         private void buttonConnect_Click(object sender, EventArgs e) {
             var profile = GetSelectedProfile();
+            profile.WindowSize = cbResolutions.SelectedItem.ToString();
 
             if (String.IsNullOrWhiteSpace(profile.Computer) || String.IsNullOrWhiteSpace(profile.Computer)) {
                 MessageBox.Show("Invalid connection");
@@ -130,6 +140,7 @@ namespace RDP_Portal {
             textBoxUsername.Text = profile.Username ;
             textBoxPassword.Text = profile.Password;
             textBoxDomain.Text = profile.Domain;
+            
         }
 
         private void buttonEdit_Click(object sender, EventArgs e) {
@@ -184,7 +195,7 @@ namespace RDP_Portal {
             profile.Password = textBoxPassword.Text;
             profile.Domain = textBoxDomain.Text;
             profile.Filename = Path.Combine(Config.rdpDir, profile.Name + ".rdp");
-
+            profile.WindowSize = cbResolutions.SelectedItem.ToString();
             profile.PrepareRdpFile();
 
             _config.Save();
@@ -254,6 +265,16 @@ namespace RDP_Portal {
                 textBoxUsername.Text = selectedItems.Username;
                 textBoxPassword.Text = selectedItems.Password;
             }
+        }
+
+        private void cbResolutions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

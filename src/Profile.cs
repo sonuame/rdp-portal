@@ -144,23 +144,24 @@ namespace RDP_Portal {
             var bottom = resolution.Size.Height / 2 + height / 2 + yBuffer;
             result.Add($"winposstr:s:0,1,{left},{top},{right},{bottom}");
 
-            if (justCreated) {
-                result.Add("desktopwidth:i:1280");
-                result.Add("desktopheight:i:720");
-                result.Add("use multimon:i:1");
+            if (justCreated || true) {
+                if (this.WindowSize.ToLower().Trim().Equals("full screen"))
+                    result.Add("use multimon:i:1");
+                else
+                {
+                    var size = this.WindowSize.Split(new[] { " x " }, StringSplitOptions.RemoveEmptyEntries);
+                    result.Add($"desktopwidth:i:{size[0]}");
+                    result.Add($"desktopheight:i:{size[1]}");
+                    result.Add("use multimon:i:0");
+                }
+                
                 result.Add("screen mode id:i:1");
                 result.Add("authentication level:i:0");
                 result.Add("prompt for credentials:i:0");
                 result.Add("promptcredentialonce:i:0");
             }
 
-            var writer = new StreamWriter(Filename, false);
-
-            foreach (var line in result) {
-                writer.WriteLine(line);
-            }
-
-            writer.Close();
+            File.WriteAllLines(Filename, result);
         }
 
         [JsonIgnore] public bool JustAdded { get; set; } = false;
@@ -172,5 +173,7 @@ namespace RDP_Portal {
 
             }
         }
+
+        public string WindowSize { get; set; }
     }
 }

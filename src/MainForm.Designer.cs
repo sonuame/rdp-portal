@@ -46,6 +46,8 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.listBox = new System.Windows.Forms.ListBox();
             this.btnDuplicate = new System.Windows.Forms.Button();
+            this.cbResolutions = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             // 
             this.checkBoxKeepOpening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.checkBoxKeepOpening.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxKeepOpening.Location = new System.Drawing.Point(8, 410);
+            this.checkBoxKeepOpening.Location = new System.Drawing.Point(8, 379);
             this.checkBoxKeepOpening.Name = "checkBoxKeepOpening";
             this.checkBoxKeepOpening.Size = new System.Drawing.Size(226, 24);
             this.checkBoxKeepOpening.TabIndex = 1;
@@ -67,7 +69,7 @@
             this.buttonAbout.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbout.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbout.Location = new System.Drawing.Point(363, 404);
+            this.buttonAbout.Location = new System.Drawing.Point(363, 373);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(75, 31);
             this.buttonAbout.TabIndex = 2;
@@ -81,7 +83,7 @@
             this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConnect.Location = new System.Drawing.Point(266, 404);
+            this.buttonConnect.Location = new System.Drawing.Point(266, 373);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(91, 31);
             this.buttonConnect.TabIndex = 3;
@@ -286,9 +288,10 @@
             this.listBox.ItemHeight = 18;
             this.listBox.Location = new System.Drawing.Point(8, 12);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(159, 364);
+            this.listBox.Size = new System.Drawing.Size(159, 328);
             this.listBox.TabIndex = 0;
             this.listBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_DrawItem);
+            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             this.listBox.SelectedValueChanged += new System.EventHandler(this.listBox_SelectedValueChanged);
             this.listBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDoubleClick);
             // 
@@ -306,12 +309,36 @@
             this.btnDuplicate.UseVisualStyleBackColor = true;
             this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
             // 
+            // cbResolutions
+            // 
+            this.cbResolutions.DropDownHeight = 126;
+            this.cbResolutions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbResolutions.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbResolutions.FormattingEnabled = true;
+            this.cbResolutions.IntegralHeight = false;
+            this.cbResolutions.Location = new System.Drawing.Point(267, 294);
+            this.cbResolutions.Name = "cbResolutions";
+            this.cbResolutions.Size = new System.Drawing.Size(171, 26);
+            this.cbResolutions.TabIndex = 21;
+            this.cbResolutions.SelectedIndexChanged += new System.EventHandler(this.cbResolutions_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(173, 299);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 19);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Window Size: ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(452, 446);
+            this.ClientSize = new System.Drawing.Size(452, 415);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbResolutions);
             this.Controls.Add(this.btnDuplicate);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonEdit);
@@ -376,5 +403,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnDuplicate;
+        private System.Windows.Forms.ComboBox cbResolutions;
+        private System.Windows.Forms.Label label5;
     }
 }
