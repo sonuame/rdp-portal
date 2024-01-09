@@ -25,19 +25,20 @@ namespace RDP_Portal {
         private void MainForm_Load(object sender, EventArgs e) {
             listBox.DataSource = _config.Profiles;
 
-            if (_config.Profiles.Count == 0) {
-                AddNewProfile();
-            }
-
             checkBoxKeepOpening.Checked = _config.KeepOpening;
             cbResolutions.Items.AddRange(new[]
             {
-                "Full Screen",
+                "1280 x 720",
                 "1600 x 900",
-                "1280 x 720"
+                "Full Screen"
             });
 
             cbResolutions.SelectedIndex = 0;
+
+            if (_config.Profiles.Count == 0)
+            {
+                AddNewProfile();
+            }
         }
 
         public bool EditMode {
