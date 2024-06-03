@@ -18,7 +18,7 @@ namespace RDP_Portal {
             }
             set => _name = value;
         }
-
+        public string Id { get; set; } = null;
         public string Filename { get; set; } = "";
         public string Computer { get; set; }
         public string Username { get; set; }

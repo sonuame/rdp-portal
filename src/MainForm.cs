@@ -16,6 +16,8 @@ namespace RDP_Portal {
         private Config _config;
         private bool _editMode = false;
         private Profile selectedProfile = null;
+        private int selectedProfileIndex = -1;
+
 
         public MainForm() {
             InitializeComponent();
@@ -25,7 +27,6 @@ namespace RDP_Portal {
         private void MainForm_Load(object sender, EventArgs e) {
             listBox.DataSource = _config.Profiles;
 
-            checkBoxKeepOpening.Checked = _config.KeepOpening;
             cbResolutions.Items.AddRange(new[]
             {
                 "1280 x 720",
@@ -61,6 +62,7 @@ namespace RDP_Portal {
 
         private void AddNewProfile() {
             var profile = new Profile();
+            profile.Id = Guid.NewGuid().ToString();
             profile.JustAdded = true;
             profile.WindowSize = cbResolutions.Items[0].ToString();
             _config.Profiles.Add(profile);
@@ -133,6 +135,7 @@ namespace RDP_Portal {
             }
 
             selectedProfile = profile;
+            selectedProfileIndex = _config.Profiles.IndexOf(profile);
             btnDuplicate.Enabled = true;
             EditMode = profile.JustAdded;
 
@@ -208,7 +211,7 @@ namespace RDP_Portal {
         }
 
         private void checkBoxKeepOpening_CheckedChanged(object sender, EventArgs e) {
-            _config.KeepOpening = checkBoxKeepOpening.Checked;
+            _config.KeepOpening = true;
             _config.Save();
         }
 
@@ -238,7 +241,7 @@ namespace RDP_Portal {
             var rect = new Rectangle(e.Bounds.X + iconMargin, e.Bounds.Y, iconWidth, iconWidth);
             //assuming the icon is already added to project resources
 
-            e.Graphics.DrawIcon(rdp_portal.Properties.Resources.icon, rect);
+            e.Graphics.DrawIcon(RDP_Portal.Properties.Resources.icon, rect);
 
             var profile = (Profile)listBox.Items[e.Index];
 
@@ -276,6 +279,48 @@ namespace RDP_Portal {
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUP_Click(object sender, EventArgs e)
+        {
+            var initial_profile = (Profile)listBox.SelectedItem;
+            var initial_index = listBox.SelectedIndex;
+
+            var new_item_index = initial_index > 0 ? initial_index - 1 : 0;
+            if (new_item_index >= 0)
+            {
+                _config.Profiles.Insert(new_item_index, initial_profile);
+                _config.Profiles.RemoveAt(initial_index + 1);
+                _config.Save();
+
+                listBox.DataSource = _config.Profiles;
+
+                initial_index = _config.Profiles.ToList().FindIndex(m => m.Id == initial_profile.Id);
+
+                if (initial_index > -1)
+                    listBox.SelectedIndex = initial_index;
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            var initial_profile = (Profile)listBox.SelectedItem;
+            var initial_index = listBox.SelectedIndex;
+
+            var new_item_index = initial_index < (_config.Profiles.Count - 1) ? initial_index + 2 : (_config.Profiles.Count - 1);
+            if (initial_index < (_config.Profiles.Count - 1))
+            {
+                _config.Profiles.Insert(new_item_index, initial_profile);
+                _config.Profiles.RemoveAt(initial_index);
+                _config.Save();
+
+                listBox.DataSource = _config.Profiles;
+
+                initial_index = _config.Profiles.ToList().FindIndex(m => m.Id == initial_profile.Id);
+
+                if (initial_index < (_config.Profiles.Count))
+                    listBox.SelectedIndex = initial_index;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace RDP_Portal {
@@ -30,6 +31,15 @@ namespace RDP_Portal {
             
             if (_instance.Profiles == null) {
                 _instance.Profiles = new BindingList<Profile>();
+                _instance.Save();
+            }
+
+            bool AnyWithoutId = _instance.Profiles.ToList().Any(m => m.Id == null);
+            if (AnyWithoutId)
+            {
+                foreach (var profile in _instance.Profiles)
+                    profile.Id ??= Guid.NewGuid().ToString();
+
                 _instance.Save();
             }
 

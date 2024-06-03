@@ -25,8 +25,6 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.checkBoxKeepOpening = new System.Windows.Forms.CheckBox();
-            this.buttonAbout = new System.Windows.Forms.Button();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.textBoxComputer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,34 +46,10 @@
             this.btnDuplicate = new System.Windows.Forms.Button();
             this.cbResolutions = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnUP = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // checkBoxKeepOpening
-            // 
-            this.checkBoxKeepOpening.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkBoxKeepOpening.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxKeepOpening.Location = new System.Drawing.Point(8, 379);
-            this.checkBoxKeepOpening.Name = "checkBoxKeepOpening";
-            this.checkBoxKeepOpening.Size = new System.Drawing.Size(226, 24);
-            this.checkBoxKeepOpening.TabIndex = 1;
-            this.checkBoxKeepOpening.Text = "Keep opening RDP Portal";
-            this.checkBoxKeepOpening.UseVisualStyleBackColor = true;
-            this.checkBoxKeepOpening.CheckedChanged += new System.EventHandler(this.checkBoxKeepOpening_CheckedChanged);
-            // 
-            // buttonAbout
-            // 
-            this.buttonAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAbout.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAbout.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbout.Location = new System.Drawing.Point(363, 373);
-            this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(75, 31);
-            this.buttonAbout.TabIndex = 2;
-            this.buttonAbout.Text = "About";
-            this.buttonAbout.UseVisualStyleBackColor = true;
-            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // buttonConnect
             // 
@@ -83,7 +57,7 @@
             this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConnect.Location = new System.Drawing.Point(266, 373);
+            this.buttonConnect.Location = new System.Drawing.Point(347, 372);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(91, 31);
             this.buttonConnect.TabIndex = 3;
@@ -331,12 +305,42 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Window Size: ";
             // 
+            // btnUP
+            // 
+            this.btnUP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUP.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUP.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUP.Location = new System.Drawing.Point(8, 346);
+            this.btnUP.Name = "btnUP";
+            this.btnUP.Size = new System.Drawing.Size(32, 29);
+            this.btnUP.TabIndex = 22;
+            this.btnUP.Text = "U";
+            this.btnUP.UseVisualStyleBackColor = true;
+            this.btnUP.Click += new System.EventHandler(this.btnUP_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDown.Location = new System.Drawing.Point(46, 346);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(32, 29);
+            this.btnDown.TabIndex = 23;
+            this.btnDown.Text = "D";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(452, 415);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnUP);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbResolutions);
             this.Controls.Add(this.btnDuplicate);
@@ -349,8 +353,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.buttonConnect);
-            this.Controls.Add(this.buttonAbout);
-            this.Controls.Add(this.checkBoxKeepOpening);
             this.Controls.Add(this.listBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
@@ -396,14 +398,12 @@
 
         private System.Windows.Forms.Button buttonConnect;
 
-        private System.Windows.Forms.Button buttonAbout;
-
-        private System.Windows.Forms.CheckBox checkBoxKeepOpening;
-
         #endregion
 
         private System.Windows.Forms.Button btnDuplicate;
         private System.Windows.Forms.ComboBox cbResolutions;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnUP;
+        private System.Windows.Forms.Button btnDown;
     }
 }
