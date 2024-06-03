@@ -57,9 +57,9 @@
             this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConnect.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConnect.Location = new System.Drawing.Point(347, 372);
+            this.buttonConnect.Location = new System.Drawing.Point(84, 387);
             this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(91, 31);
+            this.buttonConnect.Size = new System.Drawing.Size(83, 29);
             this.buttonConnect.TabIndex = 3;
             this.buttonConnect.Text = "Connect";
             this.buttonConnect.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             this.textBoxComputer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxComputer.Location = new System.Drawing.Point(92, 26);
             this.textBoxComputer.Name = "textBoxComputer";
-            this.textBoxComputer.Size = new System.Drawing.Size(158, 23);
+            this.textBoxComputer.Size = new System.Drawing.Size(290, 23);
             this.textBoxComputer.TabIndex = 4;
             // 
             // label1
@@ -132,7 +132,7 @@
             this.textBoxUsername.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.Location = new System.Drawing.Point(92, 56);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(158, 23);
+            this.textBoxUsername.Size = new System.Drawing.Size(290, 23);
             this.textBoxUsername.TabIndex = 10;
             // 
             // textBoxPassword
@@ -142,7 +142,7 @@
             this.textBoxPassword.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(93, 86);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(157, 23);
+            this.textBoxPassword.Size = new System.Drawing.Size(289, 23);
             this.textBoxPassword.TabIndex = 11;
             this.textBoxPassword.UseSystemPasswordChar = true;
             // 
@@ -153,7 +153,7 @@
             this.textBoxDomain.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDomain.Location = new System.Drawing.Point(93, 116);
             this.textBoxDomain.Name = "textBoxDomain";
-            this.textBoxDomain.Size = new System.Drawing.Size(157, 23);
+            this.textBoxDomain.Size = new System.Drawing.Size(289, 23);
             this.textBoxDomain.TabIndex = 12;
             // 
             // groupBox1
@@ -171,7 +171,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(174, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(265, 154);
+            this.groupBox1.Size = new System.Drawing.Size(397, 154);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection";
@@ -208,7 +208,7 @@
             this.buttonOptions.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOptions.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOptions.Location = new System.Drawing.Point(363, 200);
+            this.buttonOptions.Location = new System.Drawing.Point(495, 200);
             this.buttonOptions.Name = "buttonOptions";
             this.buttonOptions.Size = new System.Drawing.Size(75, 31);
             this.buttonOptions.TabIndex = 16;
@@ -249,7 +249,7 @@
             this.textBoxName.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(174, 12);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(266, 23);
+            this.textBoxName.Size = new System.Drawing.Size(398, 23);
             this.textBoxName.TabIndex = 13;
             // 
             // listBox
@@ -262,7 +262,7 @@
             this.listBox.ItemHeight = 18;
             this.listBox.Location = new System.Drawing.Point(8, 12);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(159, 328);
+            this.listBox.Size = new System.Drawing.Size(159, 364);
             this.listBox.TabIndex = 0;
             this.listBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox_DrawItem);
             this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
@@ -275,7 +275,7 @@
             this.btnDuplicate.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnDuplicate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDuplicate.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDuplicate.Location = new System.Drawing.Point(363, 240);
+            this.btnDuplicate.Location = new System.Drawing.Point(495, 240);
             this.btnDuplicate.Name = "btnDuplicate";
             this.btnDuplicate.Size = new System.Drawing.Size(75, 31);
             this.btnDuplicate.TabIndex = 20;
@@ -292,7 +292,7 @@
             this.cbResolutions.IntegralHeight = false;
             this.cbResolutions.Location = new System.Drawing.Point(267, 294);
             this.cbResolutions.Name = "cbResolutions";
-            this.cbResolutions.Size = new System.Drawing.Size(171, 26);
+            this.cbResolutions.Size = new System.Drawing.Size(303, 26);
             this.cbResolutions.TabIndex = 21;
             this.cbResolutions.SelectedIndexChanged += new System.EventHandler(this.cbResolutions_SelectedIndexChanged);
             // 
@@ -311,7 +311,7 @@
             this.btnUP.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUP.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUP.Location = new System.Drawing.Point(8, 346);
+            this.btnUP.Location = new System.Drawing.Point(8, 387);
             this.btnUP.Name = "btnUP";
             this.btnUP.Size = new System.Drawing.Size(32, 29);
             this.btnUP.TabIndex = 22;
@@ -325,7 +325,7 @@
             this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.Location = new System.Drawing.Point(46, 346);
+            this.btnDown.Location = new System.Drawing.Point(46, 387);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(32, 29);
             this.btnDown.TabIndex = 23;
@@ -338,7 +338,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(452, 415);
+            this.ClientSize = new System.Drawing.Size(584, 428);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUP);
             this.Controls.Add(this.label5);
@@ -354,12 +354,14 @@
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.buttonConnect);
             this.Controls.Add(this.listBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(468, 4499);
+            this.MaximumSize = new System.Drawing.Size(600, 4499);
             this.MinimumSize = new System.Drawing.Size(468, 430);
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "RDP Portal";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
